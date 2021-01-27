@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgrey;
+    font-family: calibri;
+    box-sizing: border-box;
+    background-image: url("background\ for\ philosophy\ website.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.slider{
+	max-width: 788px;
+	border:5px solid  #9D00FF;
+	margin:0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.slider .left-slide,.slider .right-slide{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: #444444;
+  border-radius: 50%;
+  color:#ffffff;
+  font-size: 20px;
+  top:50%;
+  cursor: pointer;
+  margin-top: -20px;
+  text-align: center;
+  line-height: 40px;
+  
+}
+.slider .left-slide:hover,.slider .right-slide:hover{
+ box-shadow: 0px 0px 10px black;
+ background-color: #29a8e2;
+}
+
+.slider .left-slide{
+	left: 30px;
+}
+.slider .right-slide{
+	right: 30px;
+}
+.slider .slider-items .item img{
+	max-width: 100%;
+	display: block;
+	animation:zoom 1s ease;
+}
+
+@keyframes zoom{
+	0%{transform: scale(2);opacity: 0}
+	50%{transform: scale(2);}
+	100%{transform: scale(1);opacity:1}
+}
+.slider .slider-items .item{
+	display: none;
+	position: relative;
+}
+.slider .slider-items .item .caption{
+position: absolute;
+width: 100%;
+height: 50px;
+bottom: 0px;
+left: 0px;
+background-color: rgba(0,0,0,.5);
+line-height: 60px;
+text-align: center;
+color: #ffffff;
+font-size: 20px;
+
+}
+
+.slider .slider-items .item.active{
+	display: block;
+}
+
+ul {
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    background: #272727;
+}
+
+ul li {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    display: block;
+}
+
+ul li a:hover {
+    color: #ccc;
+}
+
+.dropdown {
+    position: absolute;
+    width: 100%;
+    flex-wrap: wrap;
+    visibility: hidden;
+    transition: 0.3s;
+    left: 0;
+    z-index: 2;
+}
+
+ul li:hover .dropdown {
+    visibility: visible;
+    top: 100%;
+}
+
+.menu-header {
+    display: none;
+}
+
+@media(max-width: 767px){
+    ul {
+        display: table;
+        width: 100%;
+    }
+    ul li {
+        text-align: left;
+    }
+    .dropdown {
+        position: relative;
+        left: 0;
+        top: 0;
+        transition: 0;
+        visibility: visible;
+        display: none;
+        z-index: 1;
+    }
+    .display {
+        display: block;
+    }
+    .menu-content {
+        display: none;
+    }
+    .menu-header {
+        background: #272727;
+        text-align: right;
+        padding: 10px;
+        display: block;
+    }
+    .fa-bars {
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+    .slider {
+        display: none;
+    }
+}
+
+main {
+    background: linear-gradient(#7f9cb9, #fff)
+}
+
+img {
+    margin: auto;
+    display: block;
+    height: 350px;
+    clear: both;
+}
+
+#grid {
+    clear:both;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "box-a box-a"
+        "boxb boxc"
+        "boxd boxe"
+        "boxf boxg"
+        "boxh boxi";
+    height: auto;
+    padding: 30px;
+    margin: auto;
+    grid-gap: 100px 20px;
+}
+
+#box {
+    padding: 20px;
+}
+
+#box-a {
+    margin-top: 30px;
+    padding: 10px;
+    grid-area: box-a;
+}
+
+#boxb {
+    grid-area: boxb;
+}
+
+#boxc {
+    grid-area: boxc;
+}
+
+#boxd {
+    grid-area: boxd;
+}
+
+#boxe {
+    grid-area: boxe;
+}
+
+#boxf {
+    grid-area: boxf;
+}
+
+#boxg {
+    grid-area: boxg
+}
+
+#boxh {
+    grid-area: boxh;
+}
+
+#boxi {
+    grid-area: boxi;
+}
+
+@media only screen and (max-width:550px) {
+    #grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.7fr 0.7fr 0.2fr 0.8fr 0.3fr 0.4fr 0.3fr 0.5fr 0.4fr;
+        grid-template-areas: 
+        "box-a"
+        "boxb"
+        "boxc"
+        "boxd"
+        "boxe"
+        "boxf"
+        "boxg"
+        "boxh"
+        "boxi";
+    }
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+p {
+    color: black;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+    height: auto;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+#container1, #container2, #container3, #container4, #container5, #container6 {
+    display: flex;
+    height: 40px;
+    margin: auto;
+    justify-content: center;
+    padding: 50px 20px 20px 20px;
+}
+
+.box-1 {
+    transition: transform 0.6s;
+}
+
+.box-1:hover {
+    transform: scale(1.16);
+    cursor: pointer;
+}
+.container img {
+    height: 250px;
+    width: 200px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+h3 {
+    text-align: center;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container h2 {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.box-2 {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.box-2 img {
+    width: auto;
+    height: auto;
+    max-width: 100%;  
+    margin-top: 30px;
+    margin-bottom: 30px;  
+    margin: 0 auto;
+}
+
+footer {
+    background-color: lightgrey;
+    padding: 30px;
+    width: auto;
+    margin: auto;
+}
+
+footer p {
+    text-align: center;
+}
+
+.scrollTop {
+    position: fixed;
+    right: 5vw;
+    bottom: 3vw;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(#c21300c2, #ffc400bb);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.scrollTop.active {
+    visibility: visible;
+    opacity: 0.7;
+}
+
+.scrollTop:active {
+    background: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#c21500, #ffc500);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(#ce4332,#ffd032);
+}
+
+.progress {
+    position: fixed;
+    height: 5px;
+    background-color: #f56600;
+    display: inline-block;
+    overflow: hidden;
+    transition: 0.2s;
+    box-shadow: 0 0 20px #f56600, 0 0 40px #f56600, 0 0 80px #f56600;
+}
+
+
